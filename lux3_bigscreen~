@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+import pygame;
+import time;
+
+pygame.font.init();
+screen = pygame.display.set_mode([640,480]);
+def draw(c1,c2,c3,sx,sy,x,y):
+    pygame.draw.rect(screen, (c1,c2,c3), (sx,sy,x,y));
+
+pygame.mouse.set_visible(False);
+while True:
+    for e in pygame.event.get():
+        if e.type == pygame.QUIT:
+            exit();
+    screen.fill(0);
+    draw(0,170,170,0,0,16,20);
+    draw(46,46,46,16,0,16,20);
+    font = pygame.font.Font("ttyfont.ttf", 16);
+    screen.blit(font.render("1", True, (255,255,255)), (4,2));
+    screen.blit(font.render("2", True, (255,255,255)), (20,2));
+    draw(0,170,170,0,21,340,16);
+    screen.blit(font.render("Terminal", True, (255,255,255)), (4,21));
+    draw(0,170,170,0,32,2,448);
+    draw(0,170,170,0,478,640,2);
+    draw(0,170,170,638,32,2,448);
+    screen.blit(font.render("[gnulinux@arch ~]$ lux3-info", True, (170,170,170)), (2,38));
+    screen.blit(font.render("Lux3 - The Analog Window Manager 'i3', ", True, (170,170,170)), (4,54));
+    screen.blit(font.render("made by Luxidev", True, (170,170,170)), (4,70));
+    screen.blit(font.render("Language: Python", True, (170,170,170)), (4,86));
+    screen.blit(font.render("Version: 1.0", True, (170,170,170)), (4,102));
+    screen.blit(font.render("Release date: 2025-08-20", True, (170,170,170)), (4,118));
+    screen.blit(font.render("[gnulinux@arch ~]$ ", True, (170,170,170)), (4,134));
+    screen.blit(font.render(time.ctime(), True, (255,255,255)), (440,2));
+    draw(255,255,255,pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],8,8);
+    pygame.display.flip();

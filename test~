@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import time;
+
+print(time.ctime(), end="\r");
+while True:
+      pass;
