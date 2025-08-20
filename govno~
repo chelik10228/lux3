@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+import pygame;
+
+lbb = b'';
+pygame.mixer.init();
+for i in range(20000):
+    if i % 60 < 30:
+        lbb += b'\xFF\xFF';
+    else:
+        lbb += b'\xFF\xA1';
+bs = pygame.mixer.Sound(buffer=lbb);
+bs.play();
+
+while True:
+    pass;
