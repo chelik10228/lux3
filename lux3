@@ -7,20 +7,11 @@ screen = pygame.display.set_mode([340,190]);
 def draw(c1,c2,c3,sx,sy,x,y):
     pygame.draw.rect(screen, (c1,c2,c3), (sx,sy,x,y));
 
-x,y = 0,0;
-
 pygame.mouse.set_visible(False);
 while True:
     for e in pygame.event.get():
-        if e.type == pygame.KEYDOWN:
-            if e.key == pygame.K_w:
-                y -= 4;
-            if e.key == pygame.K_a:
-                x -= 4;
-            if e.key == pygame.K_s:
-                y += 4;
-            if e.key == pygame.K_d:
-                x += 4;
+        if e.type == pygame.QUIT:
+            exit();
     screen.fill(0);
     draw(0,170,170,0,0,16,20);
     draw(46,46,46,16,0,16,20);
@@ -40,5 +31,5 @@ while True:
     screen.blit(font.render("Release date: 2025-08-20", True, (170,170,170)), (4,118));
     screen.blit(font.render("[gnulinux@arch ~]$ ", True, (170,170,170)), (4,134));
     screen.blit(font.render(time.ctime(), True, (255,255,255)), (140,2));
-    draw(255,255,255,x,y,8,8);
+    draw(255,255,255,pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],8,8);
     pygame.display.flip();
