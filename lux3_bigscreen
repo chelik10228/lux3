@@ -29,7 +29,16 @@ while True:
     screen.blit(font.render("Language: Python", True, (170,170,170)), (4,86));
     screen.blit(font.render("Version: 1.0", True, (170,170,170)), (4,102));
     screen.blit(font.render("Release date: 2025-08-20", True, (170,170,170)), (4,118));
-    screen.blit(font.render("[gnulinux@arch ~]$ ", True, (170,170,170)), (4,134));
+    screen.blit(font.render("[gnulinux@arch ~]$ ", True, (170,170,170)), (2,134));
     screen.blit(font.render(time.ctime(), True, (255,255,255)), (440,2));
-    draw(255,255,255,pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],8,8);
+    draw(255,255,255,pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],1,6);
+    draw(255,255,255,pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],6,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+1,pygame.mouse.get_pos()[1]+1,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+2,pygame.mouse.get_pos()[1]+2,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+3,pygame.mouse.get_pos()[1]+3,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+4,pygame.mouse.get_pos()[1]+4,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+5,pygame.mouse.get_pos()[1]+5,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+6,pygame.mouse.get_pos()[1]+6,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+7,pygame.mouse.get_pos()[1]+7,1,1);
+    draw(255,255,255,pygame.mouse.get_pos()[0]+8,pygame.mouse.get_pos()[1]+8,1,1);
     pygame.display.flip();
